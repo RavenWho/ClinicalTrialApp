@@ -1,0 +1,1 @@
+"services:\n  backend:\n    build: ./backend\n  ml_service:\n    build: ./ml_service\n  mongo:\n    image: mongo" 
