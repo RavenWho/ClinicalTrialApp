@@ -1,1 +1,29 @@
-"services:\n  backend:\n    build: ./backend\n  ml_service:\n    build: ./ml_service\n  mongo:\n    image: mongo" 
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - MONGODB_URI=mongodb://mongo:27017/ctb
+      - JWT_SECRET=devsecret
+      - ML_SERVICE_URL=http://ml_service:5001
+    depends_on:
+      - mongo
+      - ml_service
+
+  ml_service:
+    build: ./ml_service
+    ports:
+      - "5001:5001"
+
+  mongo:
+    image: mongo:6
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
