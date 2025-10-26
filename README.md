@@ -1,1 +1,1 @@
-"# Dynamic Budgeting & Forecasting Tool for Clinical Trials" 
+Dynamic Budgeting & Forecasting Tool for Clinical Trials
