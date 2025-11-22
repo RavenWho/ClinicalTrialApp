@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, AreaChart } from 'recharts';
 import { Calendar } from 'lucide-react';
-import { Button } from './ui/button';
+import { Button } from '../../components/ui/button';
+
 import {
   Select,
   SelectContent,
